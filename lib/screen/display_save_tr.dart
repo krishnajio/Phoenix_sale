@@ -284,11 +284,11 @@ class _DisplayAndSaveTRState extends State<DisplayAndSaveTR> {
                                 "TrDate=$_Trdate&HatchDate=$_hdate&uname=$UserName&Code=$_CCode&CName=$_CName&" +
                                 "Pay_mode=$_paymode&DD_No=$_DdNo&Bank_det=$bd1+$bd2&Pay_type=$_paytype&Chick_type=$_ctype&" +
                                 "CihckRate=$_rate&Remarks=$_remarks&TrAmount=$_Tramount&bankdate=$_bankdate");
-                        //print(url);
+                        print(url);
                         //20-12-23
-                        // NetworkHelper networkHelper = NetworkHelper(url);
-                        //var data = await networkHelper.getData();
-                        //  print(data);
+                         NetworkHelper networkHelper = NetworkHelper(url);
+                        var data = await networkHelper.getData();
+                          print(data);
                       } catch (e) {
                         print("Errdatasave $e");
                       }

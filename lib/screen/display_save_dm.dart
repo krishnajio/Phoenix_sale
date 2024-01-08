@@ -219,10 +219,10 @@ class _SaveSupplyState extends State<SaveSupply> {
                       "Chick_type=$_ctype&"
                       +
                       "CihckRate=$_rate&Remarks=$_remarks&TotalChicks=$_totalChicks&Mortality=$_trasnitMortality&Hatchries=$_hatchery");
-                      //print(url);
-                    //  NetworkHelper networkHelper = NetworkHelper(url);
-                    //  var data = await networkHelper.getData();
-                     //   print(data);
+                      print(url);
+                      NetworkHelper networkHelper = NetworkHelper(url);
+                      var data = await networkHelper.getData();
+                        print(data);
                     } catch (e) {
                       print(e);
                     }
