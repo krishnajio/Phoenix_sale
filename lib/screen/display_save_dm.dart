@@ -237,11 +237,11 @@ class _SaveSupplyState extends State<SaveSupply> {
 
 
                       String _msg =
-                          "Supplied $_ctype Chicks Hatch date $_hdate having Qty $_totalChicks With TM $_trasnitMortality @ $_rate to $_CName by $_smsDmNumber"  ;
+                          "Supplied $_ctype Chicks Hatch date $_hdate having Qty $_totalChicks and TM $_trasnitMortality @ $_rate to $_CName by $_smsDmNumber"  ;
                       List<String> recipents = [_MobileNumber!];
 
                       await telephony.sendSms(
-                          to: "+919685043413",
+                          to: "+91$_MobileNumber",
                           message: _msg,
                           statusListener: (s) => print(s.name));
 

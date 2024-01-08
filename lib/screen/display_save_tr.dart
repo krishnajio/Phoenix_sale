@@ -314,7 +314,7 @@ class _DisplayAndSaveTRState extends State<DisplayAndSaveTR> {
                         print(_msg);
                         List<String> recipents = [_MobileNumber!];
                        await telephony.sendSms(
-                            to: "+919685043413",
+                            to:  "+91$_MobileNumber",
                             message: _msg,
                            statusListener: (s) => print(s.name),
                         );
