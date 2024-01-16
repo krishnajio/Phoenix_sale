@@ -1,4 +1,4 @@
-import 'package:connectivity/connectivity.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:csc_picker/csc_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -37,7 +37,7 @@ class _NewCustomeraddState extends State<NewCustomeradd> {
         style: TextStyle(fontSize: 15),
       ),
     );
-    ScafoldKey.currentState!.showSnackBar(snackBar);
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 
 
@@ -162,7 +162,7 @@ class _NewCustomeraddState extends State<NewCustomeradd> {
                 cityDropdownLabel: "*City",
 
                 ///Default Country
-                defaultCountry: DefaultCountry.India,
+                defaultCountry: CscCountry.India,
 
                 //Disable country dropdown (Note: use it with default country)
                 disableCountry: true,

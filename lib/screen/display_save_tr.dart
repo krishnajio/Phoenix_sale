@@ -39,8 +39,8 @@ class _DisplayAndSaveTRState extends State<DisplayAndSaveTR> {
   String? _remarks = '';
   String? _rate = '';
   String? _bankdate = '';
-  String? _smsTrNumber='';
-  List<String> _trsplit=[];
+  String? _smsTrNumber = '';
+  List<String> _trsplit = [];
 
   DateTime selectedDate = DateTime.now();
   DateTime selectedHatchDate = DateTime.now();
@@ -252,12 +252,17 @@ class _DisplayAndSaveTRState extends State<DisplayAndSaveTR> {
               SizedBox(
                 height: 10,
               ),
-              TextButton(onPressed: (){fetchTRNumber();}, child: Text('test')),
+              TextButton(
+                  onPressed: () {
+                    fetchTRNumber();
+                  },
+                  child: Text('test')),
               if (_isSaved)
                 Center(
-                    child: CircularProgressIndicator(
-                  strokeWidth: 2,
-                ),)
+                  child: CircularProgressIndicator(
+                    strokeWidth: 2,
+                  ),
+                )
               else
                 RoundedButton(
                     title: 'Save TR',
@@ -286,37 +291,30 @@ class _DisplayAndSaveTRState extends State<DisplayAndSaveTR> {
                                 "CihckRate=$_rate&Remarks=$_remarks&TrAmount=$_Tramount&bankdate=$_bankdate");
                         print(url);
                         //20-12-23
-                         NetworkHelper networkHelper = NetworkHelper(url);
+                        NetworkHelper networkHelper = NetworkHelper(url);
                         var data = await networkHelper.getData();
-                          print(data);
+                        print(data);
                       } catch (e) {
                         print("Errdatasave $e");
                       }
                       // showToast("Show Long Toast", duration: Toast.LENGTH_LONG);
-                      setState(() {
-                        _isSaved = false;
-                      });
 
-                      Fluttertoast.showToast(
-                          msg: "TR Data Saved...",
-                          toastLength: Toast.LENGTH_LONG,
-                          gravity: ToastGravity.CENTER);
-
-                     // Navigator.pop(context);
+                      // Navigator.pop(context);
                       print('TRNUMber');
                       print(_smsTrNumber);
                       try {
                         _trsplit = _TRNumber.toString().split('/');
-                        _smsTrNumber = 'TR/${_trsplit[1]}/${_trsplit[2]}/${_trsplit[4]}';
+                        _smsTrNumber =
+                            'TR/${_trsplit[1]}/${_trsplit[2]}/${_trsplit[4]}';
                         print('sms-trno' + _smsTrNumber!);
                         String _msg =
                             "Received with $_paymode on ${_bankdate} Rs:${_Tramount!} @ ${_rate!} From $_CName For $_ctype Chicks By $_smsTrNumber";
                         print(_msg);
                         List<String> recipents = [_MobileNumber!];
-                       await telephony.sendSms(
-                            to:  "+91$_MobileNumber",
-                            message: _msg,
-                           statusListener: (s) => print(s.name),
+                        await telephony.sendSms(
+                          to: "+91$_MobileNumber",
+                          message: _msg,
+                          statusListener: (s) => print(s.name),
                         );
                         //String _r =  await sendSMS(message: _msg, recipients: recipents);
                         print(_msg);
@@ -327,10 +325,17 @@ class _DisplayAndSaveTRState extends State<DisplayAndSaveTR> {
                         print(e);
                       }
 
-                     // Navigator.pushAndRemoveUntil(
-                       // context,
-                        //MaterialPageRoute(
-                          //  builder: (context) => SalesMenuGrid()), );
+                      Fluttertoast.showToast(
+                          msg: "TR Data Saved...",
+                          toastLength: Toast.LENGTH_LONG,
+                          gravity: ToastGravity.CENTER);
+                      setState(() {
+                        _isSaved = false;
+                      });
+                      // Navigator.pushAndRemoveUntil(
+                      // context,
+                      //MaterialPageRoute(
+                      //  builder: (context) => SalesMenuGrid()), );
                       Navigator.pushNamedAndRemoveUntil(
                           context, SalesMenuGrid.id, (route) => false);
 

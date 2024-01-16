@@ -226,10 +226,7 @@ class _SaveSupplyState extends State<SaveSupply> {
                     } catch (e) {
                       print(e);
                     }
-                    // showToast("Show Long Toast", duration: Toast.LENGTH_LONG);
-                    Fluttertoast.showToast(msg : "Supply Information Saved...", toastLength: Toast.LENGTH_LONG, gravity: ToastGravity.CENTER);
 
-                    Navigator.of(context).pop();
 
                     try {
                       _dmsplit = _dmNumber.toString().split('/');
@@ -247,7 +244,10 @@ class _SaveSupplyState extends State<SaveSupply> {
                     } catch (e) {
                       print(e);
                     }
+                    // showToast("Show Long Toast", duration: Toast.LENGTH_LONG);
+                    Fluttertoast.showToast(msg : "Supply Information Saved...", toastLength: Toast.LENGTH_LONG, gravity: ToastGravity.CENTER);
 
+                   // Navigator.of(context).pop();
 
                    // Navigator.pushAndRemoveUntil(
                      // context,

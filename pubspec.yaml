@@ -49,6 +49,7 @@ dependencies:
   location:
   google_maps_flutter:
   telephony:
+  csc_picker:
   #url_launcher:
 
 dev_dependencies:

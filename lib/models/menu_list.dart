@@ -19,6 +19,19 @@ const DUMMY_CATEGORIES = const [
 
   ),
   Menu(
+      id: 'c11',
+      title: 'New Farmer',
+      routeName: 'NewCustomeradd',
+      color: Colors.purpleAccent,
+      icon: FontAwesomeIcons.addressCard),
+  Menu(
+      id: 'c12',
+      title: 'List New Farmer',
+      routeName: 'ListNewFarmer',
+      color: Colors.indigoAccent,
+      icon: FontAwesomeIcons.listAlt),
+
+  Menu(
     id: 'c3',
     title: 'Chicks Demand',
     color: Colors.orange,
