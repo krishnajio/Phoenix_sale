@@ -235,7 +235,6 @@ class _SaveSupplyState extends State<SaveSupply> {
                       _dmsplit = _dmNumber.toString().split('/');
                       _smsDmNumber = 'DM/${_dmsplit[1]}/${_dmsplit[2]}/${_dmsplit[4]}';
 
-
                       String _msg =
                           "Supplied $_ctype Chicks Hatch date $_hdate having Qty $_totalChicks and TM $_trasnitMortality @ $_rate to $_CName by $_smsDmNumber"  ;
                       List<String> recipents = [_MobileNumber!];

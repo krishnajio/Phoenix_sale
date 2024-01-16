@@ -21,6 +21,8 @@ import './screen/List_dm_customer.dart';
 import './screen/Pdf_dm.dart';
 import './screen/splashscreenforapp.dart';
 import './screen/menu_sales_screen.dart';
+import './screen/new_customer_add.dart';
+import './screen/List_new_farmer.dart';
 
  Future<void> main() async {
    //WidgetsFlutterBinding.ensureInitialized();
@@ -61,6 +63,8 @@ class MyApp extends StatelessWidget {
         ListDmCustomer.id :(context)=>ListDmCustomer(),
         PdfDm.id :(context)=>PdfDm(),
         TripScreen.id : (context)=>TripScreen(),
+        NewCustomeradd.id: (context)=>NewCustomeradd(),
+        ListNewCustomer.id : (context)=>ListNewCustomer(),
         //ImageUploadScreen.id : (context)=>ImageUploadScreen(),
         //
       },
