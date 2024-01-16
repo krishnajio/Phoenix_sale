@@ -211,6 +211,8 @@ class _SaveSupplyState extends State<SaveSupply> {
 
                     fetchDMNumber();
                     try {
+                      _dmsplit = _dmNumber.toString().split('/');
+                      _smsDmNumber = 'DM/${_dmsplit[1]}/${_dmsplit[2]}/${_dmsplit[4]}';
                       Uri url =
                          Uri.parse('$Url/InsertDMData?AreaCode=$AreaCode&Area=$AreaName&DMNo=$_dmNumber&'
                       +
@@ -229,8 +231,7 @@ class _SaveSupplyState extends State<SaveSupply> {
 
 
                     try {
-                      _dmsplit = _dmNumber.toString().split('/');
-                      _smsDmNumber = 'DM/${_dmsplit[1]}/${_dmsplit[2]}/${_dmsplit[4]}';
+
 
                       String _msg =
                           "Supplied $_ctype Chicks Hatch date $_hdate having Qty $_totalChicks and TM $_trasnitMortality @ $_rate to $_CName by $_smsDmNumber"  ;

@@ -284,6 +284,9 @@ class _DisplayAndSaveTRState extends State<DisplayAndSaveTR> {
                       }
                       fetchTRNumber();
                       try {
+                        _trsplit = _TRNumber.toString().split('/');
+                        _smsTrNumber =
+                        'TR/${_trsplit[1]}/${_trsplit[2]}/${_trsplit[4]}';
                         Uri url = Uri.parse(
                             '$Url/InsertTrData?AreaCode=$AreaCode&Area=$AreaName&TRNo=$_TRNumber&' +
                                 "TrDate=$_Trdate&HatchDate=$_hdate&uname=$UserName&Code=$_CCode&CName=$_CName&" +
@@ -303,9 +306,7 @@ class _DisplayAndSaveTRState extends State<DisplayAndSaveTR> {
                       print('TRNUMber');
                       print(_smsTrNumber);
                       try {
-                        _trsplit = _TRNumber.toString().split('/');
-                        _smsTrNumber =
-                            'TR/${_trsplit[1]}/${_trsplit[2]}/${_trsplit[4]}';
+
                         print('sms-trno' + _smsTrNumber!);
                         String _msg =
                             "Received with $_paymode on ${_bankdate} Rs:${_Tramount!} @ ${_rate!} From $_CName For $_ctype Chicks By $_smsTrNumber";
